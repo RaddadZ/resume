@@ -63,6 +63,11 @@ body {
 }
 .btn-purple-70 {
   color: #fff;
+  background-color: #854eeabb;
+  border:0 !important;
+}
+.btn-purple-50 {
+  color: #fff;
   background-color: #854eeaa0;
   border:0 !important;
 }
@@ -87,6 +92,9 @@ body {
   border: 0 !important;
   font-size: 85%;
   font-weight: 400;
+}
+.contact {
+  position: relative;
 }
 .contact svg{
   width: 18px;
@@ -143,4 +151,31 @@ body {
 .table-borderless th , .table-borderless td {
   border:0 !important;
   vertical-align: middle !important;
+}
+
+#bookmark {
+  z-index: 1005;
+  position: absolute;
+  right: -2em;
+  writing-mode: vertical-lr;
+  text-orientation: sideways;
+  background: #ea794e;
+  padding: .65em .25em .75em .25em;
+  cursor: pointer;
+}
+@media (max-width: 576px) {
+  #bookmark {
+    z-index: 1005;
+    position: absolute;
+    right: 0;
+    writing-mode: vertical-lr;
+    text-orientation: sideways;
+    background: #ea794e;
+    padding: .65em .25em .75em .25em;
+    cursor: pointer;
+  }
+}
+
+#bookmark:hover {
+  background: #e76635;
 }
