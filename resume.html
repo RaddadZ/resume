@@ -24,7 +24,7 @@
 
 <body class="bg-light">
   <main role="main" class="container">
-    <div class="contact d-flex align-items-center p-4 my-3 text-white bg-indigo rounded box-shadow">
+    <div id="contact" class="d-flex align-items-center p-4 my-3 text-white bg-indigo rounded box-shadow">
       <div class="row w-100">
         <div class="col-lg-6 col-md-4 col-sm-6 text-white-75">
             <h3 class="mb-0 text-white lh-100">Anan A. D. Raddad</h3>
@@ -59,12 +59,17 @@
           </li>
         </ul>
       </div>
-      <span id="bookmark">
-        <i class="align-self-center" data-feather="chevrons-down" ></i>
-        <span>more</span>
-      </span>
+      <div class="bookmark"> 
+        <div id="moreless" class="mbtn bg-orange">
+          <i class="align-self-center" data-feather="chevrons-down" ></i>
+          <span>more</span>
+        </div>
+        <div id="print" class="mbtn bg-green">
+          <i class="align-self-center" data-feather="printer" ></i>
+        </div>
+      </div>
     </div>
-    <div class="my-3 p-3 bg-white rounded box-shadow">
+    <div id="content" class="my-3 p-3 bg-white rounded box-shadow">
       <div class="stacked-columns mb-4">
         <div class="stack">
           <h5 class="border-bottom border-gray pb-2 mb-3 d-flex">
@@ -346,7 +351,7 @@
             <div class="btn-like btn-sm btn-purple">C++</div>
             <div class="btn-like btn-sm btn-purple">Java</div>
             <div class="btn-like btn-sm btn-purple-50">C</div>
-            <div class="btn-like btn-sm btn-purple-50">Assembly</div>
+            <div class="btn-like btn-sm btn-purple-50 d-none">Assembly</div>
             <div class="btn-like btn-sm btn-purple-50 d-none">Lisp</div>
           </div>
           <h5 class="mb-2 mt-3">Frameworks and Libraries</h5>
@@ -368,11 +373,11 @@
             <div class="btn-like btn-sm btn-purple">Git</div>
             <div class="btn-like btn-sm btn-purple">IIS Web Server</div>
             <div class="btn-like btn-sm btn-purple">MS Sql</div>
+            <div class="btn-like btn-sm btn-purple">MongoDB</div>
             <div class="btn-like btn-sm btn-purple">Firebase Realtime Database</div>
             <div class="btn-like btn-sm btn-purple">SVN</div>
             <div class="btn-like btn-sm btn-purple">Linux (Debian)</div>
-            <div class="btn-like btn-sm btn-purple">MongoDB</div>
-            <div class="btn-like btn-sm btn-purple-50">MySql</div>
+            <div class="btn-like btn-sm btn-purple-50 d-none">MySql</div>
           </div>
         </div>
         <div class="stack">
@@ -455,10 +460,14 @@
           </div>
         </div>
       </div>
-
     </div>
   </main>
-
+  <footer>
+    <h6>
+      more details on 
+      <a href="https://raddad.me/resume/general.html">https://raddad.me/resume/general.html</a>
+    </h6>
+  </footer>
   <!-- Bootstrap core JavaScript
     ================================================== -->
   <!-- Placed at the end of the document so the pages load faster -->
@@ -469,7 +478,8 @@
   <script src="./public/offcanvas.js"></script>
   <script>
     feather.replace()
-    $("#bookmark svg").attr("viewBox","5 0 24 24")
+    $("#moreless svg").attr("viewBox","5 0 24 24")
+    $("#print svg").attr("viewBox","1 0 24 24")
   </script>
 
   <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" preserveAspectRatio="none" style="display: none; visibility: hidden; position: absolute; top: -100%; left: -100%;">

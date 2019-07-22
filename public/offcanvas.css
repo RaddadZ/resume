@@ -43,6 +43,7 @@ body {
 .lh-150 { line-height: 1.5; }
 
 .btn-like {
+  position: relative;
   margin: 0.2rem 0.1rem;
   display: inline-block;
   font-weight: 400;
@@ -93,10 +94,10 @@ body {
   font-size: 85%;
   font-weight: 400;
 }
-.contact {
+#contact {
   position: relative;
 }
-.contact svg{
+#contact svg{
   width: 18px;
   height: 18px;
   stroke: currentColor;
@@ -118,7 +119,12 @@ body {
 
 .stacked-columns .stack {
   padding: .5rem;
-  margin-bottom: 1.5rem
+  margin-bottom: 1.3rem;
+  position: relative;
+}
+
+.stack .table {
+  margin-bottom: 0;
 }
 
 @media (min-width:576px) {
@@ -132,10 +138,46 @@ body {
   }
   .stacked-columns .stack {
     display: inline-block;
-    width: 100%
+    width: 100%;
+    position: relative;
   }
 }
 
+.edit-bar {
+  position: absolute;
+  right: .5em;
+  display: inline-block;
+}
+
+.list-group-item .edit-bar {
+  right:1em;
+  bottom: .25em;
+}
+
+.edit-bar input {
+  z-index: 1050;
+  width: 2em;
+  height: 1.5em;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid red;
+  vertical-align: top;
+  text-align: center;
+}
+
+.edit-bar input[type=number]::-webkit-inner-spin-button, .edit-bar input[type=number]::-webkit-outer-spin-button, {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+
+.text-red {
+  color: #ea4e4e;
+}
+.text-red-50 {
+  color: #ea4e4e80;
+}
 
 .list-group>.list-group-item.pl-0 {
   padding-top: 0.5rem !important;
@@ -153,29 +195,91 @@ body {
   vertical-align: middle !important;
 }
 
-#bookmark {
+.bookmark {
   z-index: 1005;
   position: absolute;
   right: -2em;
+}
+
+.bookmark div, .bookmark span {
   writing-mode: vertical-lr;
   text-orientation: sideways;
-  background: #ea794e;
-  padding: .65em .25em .75em .25em;
-  cursor: pointer;
+  padding: .35em .25em .25em .25em;
 }
 @media (max-width: 576px) {
-  #bookmark {
-    z-index: 1005;
-    position: absolute;
+  .bookmark {
     right: 0;
-    writing-mode: vertical-lr;
-    text-orientation: sideways;
-    background: #ea794e;
-    padding: .65em .25em .75em .25em;
-    cursor: pointer;
   }
 }
 
-#bookmark:hover {
-  background: #e76635;
+.mbtn {
+  cursor: pointer;
+}
+
+.bg-orange {
+  color: #fff;
+  background: #ea794e;
+}
+
+mbtn.bg-orange:hover {
+  background: #e07930;
+}
+
+.bg-green {
+  color: #fff;
+  background: #60ea4e;
+}
+
+mbtn.bg-green:hover {
+  background: #4ee23a;
+}
+
+footer {
+  display: none;
+}
+
+
+
+@page {
+  size: A4;
+  margin: 15mm 2mm 2mm 2mm;
+}
+
+
+.list-group-item, p {
+  page-break-inside: avoid;
+}
+
+@page:first {
+  margin-top: 1mm;
+}
+
+@media print {
+  body.bg-light {
+    background-color: white !important;
+  }
+  #content {
+    box-shadow: initial;
+    margin-top:2em;
+  }
+  .list-group-item, p {
+    page-break-inside: avoid;
+  }
+  footer {
+    display: initial;
+    position: fixed;
+    bottom: 0;
+    left: 3em;
+    text-align: center;
+    opacity: 0.5;
+  }
+  .container {
+    max-width: initial;
+  }
+  .bookmark {
+    display: none;
+  }
+  .edit-bar {
+    display: none;
+  }
 }
