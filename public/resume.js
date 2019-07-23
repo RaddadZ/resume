@@ -1,10 +1,5 @@
 $(function () {
   'use strict'
-
-  $('[data-toggle="offcanvas"]').on('click', function () {
-    $('.offcanvas-collapse').toggleClass('open')
-  })
-
   $(document).on('click','.feather-plus, .feather-minus', function(event){
     $(this).toggleClass('feather-minus');
     $(this).toggleClass('feather-plus');
